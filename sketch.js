@@ -13,7 +13,6 @@ function setup() {
     noCanvas()
 
     var movies = data.movies
-    console.log('here')
 
     for (let i = 0; i < movies.length; i++)
     {
@@ -47,15 +46,12 @@ function bfs() {
     console.log(graph)
     console.log('something?')
     var queue = [] // Use a queue to hold nodes in a bfs
-    console.log(queue)
     start.searched = true
     queue.push(start)
-    console.log(queue)
 
     while (queue.length > 0)
     {
 	var current = queue.shift()
-	console.log(queue)
 	if (current == end)
 	{
 	    console.log("Found " + current.value)
@@ -80,6 +76,7 @@ function bfs() {
     while (next != null)
     {
 	path.push(next)
+	next = next.parent
     }
 
     var txt = ''
